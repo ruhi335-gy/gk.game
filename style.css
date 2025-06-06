@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #ffecd2, #fcb69f);
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Header and Footer */
+.header {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff7e5f;
+}
+
+.footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #444;
+  opacity: 0.8;
+}
+
+input, textarea {
+  padding: 12px;
+  font-size: 16px;
+  width: 90%;
+  max-width: 300px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin: 10px auto;
+  display: block;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  background: #ff7e5f;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin: 10px;
+}
+
+button:hover {
+  background: #eb5e41;
+}
+
+.form-container {
+  margin-top: 120px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  padding: 20px;
+}
+
+#puzzle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+  gap: 4px;
+}
+
+.tile {
+  background-image: url('th.jpeg');
+  background-size: 300px 300px;
+  cursor: grab;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+#popupWin {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.box {
+  background: white;
+  color: black;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 90%;
+  width: 350px;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Emoji Game */
+.container {
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.memory-display {
+  font-size: 2rem;
+  min-height: 60px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.options-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.options-container button {
+  font-size: 2rem;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  border: none;
+}
+
+.options-container button:hover {
+  background-color: #ddd;
+}
+
+.options-container button.selected {
+  background-color: #a0e8af;
+}
+
+.result-text {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Mobile Support */
+@media (max-width: 600px) {
+  #puzzle {
+    width: 240px;
+    height: 240px;
+  }
+  .tile {
+    width: 80px;
+    height: 80px;
+  }
+  .memory-display {
+    font-size: 1.5rem;
+  }
+  .options-container button {
+    font-size: 1.5rem;
+  }
+}

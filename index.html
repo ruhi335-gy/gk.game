@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GK Puzzle & Memory Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Logo -->
+  <header class="header">
+    <h1 class="logo">GK</h1>
+  </header>
+
+  <!-- Name Form -->
+  <div class="form-container" id="form-container">
+    <h2>Enter Your Name</h2>
+    <form id="nameForm">
+      <input type="text" id="playerName" placeholder="Your name" required />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Popup 1: Greet and Ask to Play -->
+  <div class="popup" id="popup1">
+    <p id="greeting"></p>
+    <button id="yesBtn">Yes</button>
+  </div>
+
+  <!-- Popup 2: Start Puzzle -->
+  <div class="popup" id="popup2">
+    <p>Click the button to start the puzzle!</p>
+    <button id="startBtn">Start Puzzle</button>
+  </div>
+
+  <!-- Puzzle Game -->
+  <div class="popup" id="popup3">
+    <h2>🧩 Puzzle Game</h2>
+    <div id="puzzle"></div>
+
+    <div id="popupWin">
+      <div class="box">
+        <p>🎉 Great! You finished the puzzle!</p>
+        <p>Do you want to play one more game?</p>
+        <button id="playMoreBtn">Yes</button>
+        <button id="noThanksBtn">No</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Emoji Memory Game -->
+  <div class="popup" id="emojiGame">
+    <div class="container">
+      <h2>🧠 Emoji Memory Game</h2>
+      <div id="memoryDisplay" class="memory-display">Loading...</div>
+      <div id="optionsContainer" class="options-container"></div>
+      <div id="resultText" class="result-text"></div>
+    </div>
+  </div>
+
+  <!-- Feedback Popup -->
+  <div class="popup" id="feedbackPopup">
+    <div class="box">
+      <h2>💬 Feedback</h2>
+      <form id="feedbackForm">
+        <textarea id="feedbackInput" placeholder="Write your feedback here..." required></textarea>
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Thank You Popup -->
+  <div class="popup" id="thankyouPopup">
+    <div class="box">
+      <p>🙏 Thank you for your feedback!</p>
+      <p>Your game is over.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Created by GK</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
