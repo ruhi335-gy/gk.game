@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GK - Emoji Memory Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">GK</div>
+  </header>
+
+  <!-- Name Input -->
+  <div id="startForm" class="container">
+    <h2>Welcome!</h2>
+    <p>Please enter your name to start the game:</p>
+    <input type="text" id="playerName" placeholder="Your name" />
+    <button onclick="playClickSound(); submitName()">Submit</button>
+  </div>
+
+  <!-- Game Prompt -->
+  <div id="popup2" class="popup hidden">
+    <h2 id="questionHeading"></h2>
+    <div class="popup-buttons">
+      <button onclick="playClickSound(); playGame()">Yes</button>
+      <button onclick="playClickSound(); showThankYou()">No</button>
+    </div>
+  </div>
+
+  <!-- Thank You Popup -->
+  <div id="popupThankYou" class="popup hidden">
+    <h2>🙏 Thank you for visiting my web game!</h2>
+    <button onclick="playClickSound(); location.reload()">Close</button>
+  </div>
+
+  <!-- Win 3 Times Popup -->
+  <div id="popupWin3" class="popup hidden">
+    <h2>🎉 Great! You won 3 times!</h2>
+    <button onclick="playClickSound(); startFiveWinGame()">Play Again</button>
+    <button onclick="playClickSound(); showFeedback()">Quit Now</button>
+  </div>
+
+  <!-- Win 5 Times Popup -->
+  <div id="popupWin5" class="popup hidden">
+    <h2>🏆 Awesome! You won the game!</h2>
+    <button onclick="playClickSound(); showFeedback()">Close it</button>
+  </div>
+
+  <!-- Win Once Popup (full screen centered) -->
+  <div id="popupWinOnce" class="popup hidden">
+    <h2>🎉 Great! You won 1 time!</h2>
+  </div>
+
+  <!-- All Wrong Popup (full screen centered) -->
+  <div id="popupAllWrong" class="popup hidden">
+    <h2>😞 All answers are wrong! Try again!</h2>
+  </div>
+
+  <!-- Feedback Popup -->
+  <div id="popupFeedback" class="popup hidden">
+    <h2 id="feedbackHeading"></h2>
+    <textarea placeholder="Leave your feedback..."></textarea>
+    <button onclick="playClickSound(); location.reload()">Exit</button>
+  </div>
+
+  <!-- Game Area -->
+  <div id="gameContainer" class="hidden">
+    <div class="container">
+      <h1>🧠 Emoji Memory Game</h1>
+      <div id="memoryDisplay" class="memory-display">Loading...</div>
+      <div id="optionsContainer" class="options-container"></div>
+      <div id="resultText" class="result-text"></div>
+    </div>
+  </div>
+
+  <footer>
+    created by GK
+  </footer>
+
+  <audio id="correctSound" src="success-fanfare-trumpets-6185.mp3" preload="auto"></audio>
+  <audio id="wrongSound" src="error-126627.mp3" preload="auto"></audio>
+  <audio id="clickSound" src="ui-button-click-5-327756.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
